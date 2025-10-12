@@ -1,0 +1,114 @@
+/* abertura-detalle.component.css */
+:root {
+    --rojo-borgert: #B62D25; 
+    --negro-borgert: #000000;
+    --gris-fondo: #f8f8f8;
+}
+
+.detalle-abertura-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro-text h1 {
+    color: var(--rojo-borgert);
+    font-size: 32px;
+}
+
+.abertura-layout {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* --- Menú Lateral (Subcategorías) --- */
+.sub-menu-lateral {
+    flex-shrink: 0; 
+    width: 200px; 
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--negro-borgert);
+    padding: 10px 0;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--rojo-borgert);
+}
+
+.menu-item {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+    transition: color 0.2s;
+}
+
+.menu-item:hover {
+    color: var(--rojo-borgert);
+}
+
+.menu-item.active {
+    font-weight: bold;
+    color: var(--rojo-borgert);
+}
+
+/* --- Contenido Principal (Grilla y Filtros) --- */
+.main-content {
+    flex-grow: 1;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-bar label {
+    font-weight: 600;
+    color: var(--negro-borgert);
+}
+
+.filter-bar select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--gris-fondo);
+    cursor: pointer;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ffcc00;
+    background-color: #fffacd;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 800px) {
+    .abertura-layout {
+        flex-direction: column;
+    }
+    
+    .sub-menu-lateral {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    
+    .menu-item {
+        flex-grow: 1;
+        text-align: center;
+        border-right: 1px solid #ddd;
+        border-bottom: none;
+        padding: 10px 5px;
+    }
+}

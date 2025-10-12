@@ -1,0 +1,37 @@
+/* decoral.component.css */
+
+:root {
+    --rojo-borgert: #B62D25; 
+    --negro-borgert: #000000;
+}
+
+.decoral-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.intro-text {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.intro-text h2 {
+    color: var(--rojo-borgert); 
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.intro-text .subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--negro-borgert);
+    margin-bottom: 10px;
+}
+
+.intro-text .description {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}

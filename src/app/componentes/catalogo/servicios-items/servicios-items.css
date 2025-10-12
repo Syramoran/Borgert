@@ -1,0 +1,123 @@
+/* src/app/componentes/servicios/servicios.component.css */
+
+/* Variables (Aseguran consistencia de color) */
+:root {
+    /* Colores basados en la identidad visual asumida */
+    --rojo-borgert: #B62D25; 
+    --gris-claro-icono: #e0e0e0;
+    --negro-texto: #000000;
+    --gris-oscuro: #444;
+    --blanco-texto: #FFFFFF; 
+}
+
+/* Sección Contenedora General */
+.servicios-section {
+    max-width: 100%;
+    margin: none; /* Espacio superior e inferior */
+    padding: 2rem 10vw;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+/* Grilla de Servicios (Utiliza flexbox para el layout) */
+.servicios-grid {
+    display: flex;
+    justify-content: center; /* Centra los items horizontalmente */
+    gap: 1rem;
+    flex-wrap: wrap; 
+}
+
+.servicio-item {
+    /* Define el tamaño de cada columna (para 5 items por fila) */
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    cursor: default; /* Indica que no son interactivos (si solo muestran info) */
+}
+
+/* Estilo del Círculo (Icon Container) */
+.icon-container {
+    width: 6rem;
+    height: 6rem;
+    background-color: rgb(224, 224, 224);
+    border-radius: 50%; /* Crea la forma de círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease; /* Transición suave para el hover */
+}
+
+/* Estilo del Ícono de Font Awesome (<fa-icon>) */
+/* La clase 'servicio-icon' se aplica al componente <fa-icon> */
+.servicio-icon {
+    font-size: 2rem; 
+    color: black;
+    transition: color 0.2s ease; /* Transición suave para el color */
+}
+
+/* Estilo del Nombre del Servicio */
+.servicio-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    line-height: 1.3;
+    /* Asegura que todos los textos, largos o cortos, tengan el mismo espacio */
+    min-height: 3em; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* EFECTOS DE HOVER */
+/* Cambia el color de fondo del círculo al color institucional */
+.servicio-item:hover .icon-container {
+    background-color: #B62D25;
+}
+
+/* Cambia el color del ícono a blanco */
+.servicio-item:hover .servicio-icon {
+    color: white;
+}
+
+
+/* RESPONSIVIDAD */
+@media (max-width: 992px) {
+    /* En tablets, si hay muchos ítems, se usa más el wrap */
+    .servicios-item {
+        flex: 0 0 30%; /* Tres ítems por fila */
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 28px;
+    }
+    .servicios-grid {
+        gap: 10px;
+    }
+    .servicio-item {
+        flex: 0 0 45%; /* Dos ítems por fila en móviles */
+        padding: 10px 5px;
+    }
+    .icon-container {
+        width: 70px;
+        height: 70px;
+    }
+    .servicio-icon {
+        font-size: 28px;
+    }
+    .servicio-name {
+        font-size: 13px;
+        min-height: auto; /* Dejamos que el texto fluya en móviles */
+    }
+}

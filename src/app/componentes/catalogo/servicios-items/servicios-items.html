@@ -1,0 +1,16 @@
+<section class="servicios-section">
+    <h2 class="section-title">Servicios</h2>
+
+    <div class="servicios-grid">
+        @for (servicio of servicios; track servicio.nombre) {
+            <div class="servicio-item">
+                
+                <div class="icon-container">
+                    <fa-icon [icon]="servicio.icono" size="lg" class="servicio-icon"></fa-icon>
+                </div>
+                
+                <p class="servicio-name">{{ servicio.nombre }}</p>
+            </div>
+        }
+    </div>
+</section>

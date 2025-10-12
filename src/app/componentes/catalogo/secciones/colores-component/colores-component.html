@@ -1,0 +1,35 @@
+<div class="catalogo-container">
+    
+    <div class="menu-lateral">
+        
+        <div 
+            class="menu-item" 
+            [class.active]="currentSection === 'color'" 
+            (click)="selectSection('color')"
+        >
+            Galería color
+            <fa-icon [icon]="faChevron"></fa-icon> 
+        </div>
+
+        <div 
+            class="menu-item" 
+            [class.active]="currentSection === 'anodizado'" 
+            (click)="selectSection('anodizado')"
+        >
+            Anodizado
+            <fa-icon [icon]="faChevron"></fa-icon>
+        </div>
+    </div>
+
+    <div class="contenido-principal">
+        
+        <div class="intro-text">
+            <h2>{{ activeText.title }}</h2>
+            <p class="subtitle">{{ activeText.subtitle }}</p>
+            <p class="description">{{ activeText.description }}</p>
+        </div>
+
+        <app-product-grid [items]="currentItems"></app-product-grid>
+
+    </div>
+</div>

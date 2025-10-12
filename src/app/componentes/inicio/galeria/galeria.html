@@ -1,0 +1,33 @@
+<section class="gallery-section">
+    <div class="gallery">
+    <div class="gallery-header">
+        <h2 class="gallery-title">50 años abriendo el futuro</h2>
+        <p class="gallery-subtitle">Obras y proyectos destacados</p>
+    </div>
+
+    <div class="gallery-grid">
+        <img src="/galeria1.jpeg" alt="Descripción de la imagen 1" (click)="openModal('/galeria1.jpeg')">
+            <img src="/galeria2.jpg" alt="Descripción de la imagen 2" (click)="openModal('/galeria2.jpg')">
+            <img src="/galeria3.jpeg" alt="Descripción de la imagen 3" (click)="openModal('/galeria3.jpeg')">
+            <img src="/galeria4.jpg" alt="Descripción de la imagen 4" (click)="openModal('/galeria4.jpg')">
+            <img src="/galeria5.jpg" alt="Descripción de la imagen 5" (click)="openModal('/galeria5.jpg')">
+            <img src="/galeria6.JPG" alt="Descripción de la imagen 6" (click)="openModal('/galeria6.JPG')">
+            <img src="/galeria7.jpg" alt="Descripción de la imagen 7" (click)="openModal('/galeria7.jpg')">
+        
+    </div>
+
+    </div>
+
+    <div class="modal" [class.open]="isModalOpen" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <fa-icon 
+            [icon]="faClose" 
+            class="close-icon" 
+            (click)="closeModal()"
+            aria-label="Cerrar imagen en detalle"
+        ></fa-icon>
+            
+            <img [src]="currentImageUrl" alt="Imagen en detalle" class="modal-image">
+        </div>
+    </div>
+</section>

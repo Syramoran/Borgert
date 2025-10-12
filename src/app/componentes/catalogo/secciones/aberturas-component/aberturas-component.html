@@ -1,0 +1,23 @@
+<div class="aberturas-container">
+    
+    <div class="intro-text">
+        <h1>{{ introText.title }}</h1>
+        <p>{{ introText.description }}</p>
+    </div>
+
+    <div class="category-grid"> 
+        
+        @for (item of aberturasCategories; track item.name) {
+            <a 
+                [routerLink]="['/catalogo/aberturas', item.name.toLowerCase().replace(' ', '-')]" 
+                class="category-item"
+            >
+                <div class="category-image-container">
+                    <img [src]="item.imageUrl" [alt]="item.name" />
+                    <div class="hover-overlay"></div>
+                    <span class="category-name">{{ item.name }}</span>
+                </div>
+            </a>
+        }
+    </div>
+</div>

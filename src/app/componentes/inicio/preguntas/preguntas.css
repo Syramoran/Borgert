@@ -1,0 +1,124 @@
+.faq-section {
+    background-color: #f7f7f7; /* Fondo del 100% de ancho */
+    padding: 2rem 0; /* Padding vertical, el horizontal lo maneja el contenedor */
+}
+
+.faq-container {
+    padding: 0 2rem; /* Espaciado lateral de 2rem para móviles */
+    max-width: 1200px; /* Un ancho máximo razonable para pantallas grandes */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 0.5rem;
+}
+
+.faq-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Estilos del acordeón */
+.faq-item {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 1.25rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #444;
+}
+
+.faq-icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+/* Ícono de flecha (Estado por defecto) */
+.faq-icon::before, .faq-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: #777;
+    transition: transform 0.3s ease; /* Transición para la rotación */
+}
+
+/* Estilos de la cruz (estado por defecto) */
+.faq-icon::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Estado activo: el ícono se convierte en una 'x' */
+.faq-question.active .faq-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg); /* Rota 45 grados */
+}
+
+.faq-question.active .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rota -45 grados */
+}
+
+
+
+.faq-answer {
+    max-height: 0;
+    padding: 0 2rem;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Estado activo de la respuesta */
+.faq-question.active + .faq-answer {
+    max-height: 200px;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 768px) {
+    .faq-container {
+        padding: 0 8rem; /* Espaciado lateral de 8rem en escritorio */
+    }
+
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .faq-subtitle {
+        font-size: 1rem;
+    }
+}

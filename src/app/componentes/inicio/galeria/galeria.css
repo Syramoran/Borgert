@@ -1,0 +1,169 @@
+.gallery-section {
+    background-color: #fff;
+    padding-bottom:  1rem;
+}
+
+.gallery-header {
+    text-align: center;
+    padding: 2rem;
+}
+
+.gallery-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 0.5rem;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Estilos para el carrusel en móviles */
+.gallery-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem;
+    scroll-padding-right: 100%; 
+}
+
+.gallery-grid img {
+    flex-shrink: 0;
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    filter: brightness(100%); /* Valor inicial */
+    transition: filter 0.2s ease;
+}
+
+.gallery-grid img:hover {
+    cursor: pointer;
+    /* Oscurece la imagen en un 30% (ajustar el valor) */
+    filter: brightness(60%); 
+}
+
+/* --- ESTILOS DEL MODAL/LIGHTBOX --- */
+
+.modal {
+    /* Ocultar inicialmente, la clase 'open' lo mostrará */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con transparencia */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque, opcional */
+    overflow: auto; /* Permite scroll si la imagen es muy grande */
+}
+
+/* Mostrar el modal cuando Angular agrega la clase 'open' */
+.modal.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    padding: 20px;
+    background: var(--negro-borgert); /* Contenedor negro para resaltar la imagen */
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 80vh; /* Máximo 80% del alto de la ventana visible */
+    border-radius: 5px;
+}
+
+/* Ícono de Cierre (la "X" de Font Awesome) */
+.close-icon {
+    position: absolute;
+    top: -10px; /* Mover el ícono dentro de la imagen o más cerca del borde */
+        right: -10px;
+        font-size: 24px;
+    color: #fff; /* Color blanco para contraste con el fondo oscuro */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-icon:hover {
+    color: #222; /* Se vuelve rojo al pasar el mouse */
+}
+
+
+
+/* Media query para el diseño de escritorio */
+/* Diseño en pantallas grandes */
+@media (min-width: 992px) {
+  .gallery-section {
+width: 100%;
+    margin: 0 auto;
+    padding: 2rem 10vw;
+  }
+
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(3, 250px); /* 3 filas de 250px */
+    gap: 1rem;
+    padding: 0;
+    height: 100%;
+
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Distribución de imágenes (según tu referencia visual) */
+  .gallery-grid img:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .gallery-grid img:nth-child(2) {
+    grid-area: 2 / 1 / 4 / 2;
+  }
+
+  .gallery-grid img:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .gallery-grid img:nth-child(4) {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+
+  .gallery-grid img:nth-child(5) {
+    grid-area: 1 / 3 / 3 / 4;
+  }
+
+  .gallery-grid img:nth-child(6) {
+    grid-area: 1 / 4 / 3 / 5;
+  }
+
+  .gallery-grid img:nth-child(7) {
+    grid-area: 3 / 3 / 4 / 5;
+  }
+}

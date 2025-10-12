@@ -1,0 +1,124 @@
+/* colores.component.css */
+
+/* Variables de color */
+:root {
+    --rojo-borgert: #B62D25; /* Rojo/Burdeos */
+    --negro-borgert: #000000;
+    --blanco-borgert: #FFFFFF;
+    --gris-menu-inactivo: #444444; /* Fondo para tabs inactivos */
+    --gris-menu-activo: #d0d0d0; /* Fondo para tab activo */
+    --gris-fondo-claro: #f8f8f8;
+}
+
+/* Contenedor principal para la estructura de dos columnas */
+.catalogo-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+/* --- Estilos del Menú Lateral (Tabs) --- */
+.menu-lateral {
+    flex-shrink: 0; 
+    width: 250px; 
+    border-radius: 4px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    
+    background-color: var(--gris-menu-inactivo);
+    color: var(--blanco-borgert);
+    
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo Activo */
+.menu-item.active {
+    background-color: var(--gris-menu-activo); 
+    color: var(--negro-borgert); 
+}
+
+.menu-item:hover {
+    background-color: #555555;
+}
+
+.menu-item.active:hover {
+    background-color: #c0c0c0;
+}
+
+.menu-item fa-icon {
+    font-size: 14px;
+    color: inherit; 
+}
+
+
+/* --- Estilos del Contenido Principal y Texto --- */
+.contenido-principal {
+    flex-grow: 1; 
+}
+
+.intro-text {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gris-fondo-claro);
+}
+
+.intro-text h2 {
+    color: var(--rojo-borgert); 
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.intro-text .subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--negro-borgert);
+    margin-bottom: 10px;
+}
+
+.intro-text .description {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Media Query para responsividad (Apila el menú y el contenido) */
+@media (max-width: 850px) {
+    .catalogo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-lateral {
+        width: 100%; 
+        display: flex; 
+    }
+    
+    .menu-item {
+        flex-grow: 1;
+        text-align: center;
+        justify-content: center;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-item:last-child {
+        border-right: none;
+    }
+
+    .menu-item fa-icon {
+        display: none;
+    }
+}

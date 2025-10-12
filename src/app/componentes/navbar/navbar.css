@@ -1,0 +1,281 @@
+/* --- Estilos base para móviles (se aplican en todas las pantallas) --- */
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  color: black;
+  border-radius: 0 0 25px 25px;
+  position: relative;
+  transition: border-radius 0.3s ease-in-out;
+  width: 100%;
+}
+
+
+.logo {
+  height: 3rem;
+  width: auto;
+  display: block;
+}
+
+/* El botón de hamburguesa se muestra por defecto en móviles */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: rgb(0, 0, 0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* El menú de navegación colapsado es el estilo por defecto */
+.main-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ebebeb;
+  overflow: hidden;
+  max-height: 0;
+  border-radius: 0 0 50% 50%;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, border-radius 0.3s ease;
+  opacity: 0;
+}
+
+.main-nav.active {
+  max-height: 500px;
+  opacity: 1;
+  border-radius: 0 0 25px 25px;
+  z-index: 50;
+}
+
+/* Los enlaces de navegación se muestran en columna por defecto */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-links li {
+  padding: 1rem;
+}
+
+.main-nav.active .nav-links li {
+  width: 100%;
+  text-align: center;
+}
+
+.main-nav.active .nav-links li:hover {
+  background-color: rgb(203, 203, 203);
+}
+
+.nav-links li a {
+  color: black;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+}
+
+.nav-links li a.active-link {
+  font-weight: 600;
+  color: #B62D25;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #B62D25; 
+}
+
+/* Estilo base del botón de Contactanos (sin borde en móvil) */
+.nav-links li a.contact-button {
+  background-color: transparent;
+  color: #B62D25;
+  border: none; 
+  border-radius: 25px; 
+  padding: 0.8rem 1.5rem; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-weight: 500;
+}
+
+/* Efecto al pasar el mouse o al estar activo */
+/* .nav-links li a.contact-button:hover,
+.nav-links li a.contact-button.active-link {
+  background-color: #B62D25;
+  color: white;
+} */
+
+.main-header.floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main-header.active {
+  border-radius: 0;
+}
+
+/* Tablets en adelante */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .main-nav {
+    position: static;
+    max-height: none;
+    opacity: 1;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: end;
+  }
+
+  .main-header.active {
+  border-radius: 0 0 25px 25px;
+}
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+ .nav-links li {
+  padding: 0;
+}
+
+  .nav-links li a {
+    color: black;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .nav-links li a.contact-button {
+    border: 2px solid #B62D25; /* ✅ vuelve a botón */
+    background-color: transparent;
+    color: #B62D25;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-links li a.contact-button:hover,
+  .nav-links li a.contact-button.active-link {
+    background-color: #B62D25;
+    color: white;
+    border-color: #B62D25;
+  }
+
+  .nav-links li a.active-link {
+    font-weight: 600;
+    color: #B62D25;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #B62D25; 
+  }
+
+  .nav-links li a.contact-button {
+    background-color: transparent;
+    color: #B62D25;
+    border: 2px solid #B62D25; 
+    border-radius: 25px; 
+    padding: 0.8rem 1.5rem; 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-weight: 550;
+  }
+
+  .nav-links li a.contact-button:hover,
+  .nav-links li a.contact-button.active-link {
+    background-color: #B62D25;
+    color: white;
+    border-color: #B62D25;
+  }
+
+  .logo {
+    height: 3rem;
+    width: auto;
+    display: block;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  .main-header {
+    padding: 0.5rem 3rem;
+  }
+
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .main-header {
+    padding: 0.5rem 4rem;
+  }
+
+}
+
+/* Pantallas XXL */
+@media (min-width: 1536px) {
+
+}
+

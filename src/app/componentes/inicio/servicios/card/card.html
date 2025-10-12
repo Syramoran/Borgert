@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-image-container">
+        <img [src]="imagenUrl" [alt]="titulo">
+    </div>
+    <div class="card-content">
+        <h3>{{ titulo }}</h3>
+        <p>{{ texto }}</p>
+        <a [routerLink]="botonUrl" class="button">{{ botonTexto }} ></a>
+    </div>
+</div>

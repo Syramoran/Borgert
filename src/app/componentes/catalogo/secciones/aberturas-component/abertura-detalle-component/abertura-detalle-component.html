@@ -1,0 +1,60 @@
+@if (categoryData) {
+    <div class="detalle-abertura-wrapper">
+
+        <div class="intro-text">
+            <h1>{{ categoryData.introText.title }}</h1>
+            <p class="description">{{ categoryData.introText.description }}</p>
+        </div>
+
+        <div class="abertura-layout">
+
+            @if (subcategories.length > 0) {
+                <div class="sub-menu-lateral">
+                    <h3 class="menu-title">Tipos de {{ categoriaId | titlecase }}</h3>
+                    @for (sub of subcategories; track sub) {
+                        <div 
+                            class="menu-item" 
+                            [class.active]="currentSubcategory === sub" 
+                            (click)="selectSubcategory(sub)"
+                        >
+                            {{ sub }}
+                        </div>
+                    }
+                </div>
+            }
+
+            <div class="main-content">
+                
+                <div class="filter-bar">
+                    <label for="linea-filter">Filtrar por Línea de Aluminio:</label>
+                    <select 
+                        id="linea-filter"
+                        [ngModel]="currentFilterLine" 
+                        (ngModelChange)="selectFilterLine($event)"
+                    >
+                        @for (line of lines; track line) {
+                            <option [value]="line">{{ line }}</option>
+                        }
+                    </select>
+                </div>
+
+                <app-product-grid [items]="filteredItems"></app-product-grid>
+                
+                @if (filteredItems.length === 0) {
+                    <div class="no-results">
+                        <p>No se encontraron productos para esta combinación de filtros.</p>
+                    </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+}
+
+@if (!categoryData && categoriaId) {
+    <div class="error-message">
+        <h2 class="error-title">Categoría No Encontrada</h2>
+        <p>Lo sentimos, la sección '{{ categoriaId | titlecase }}' no está definida en el catálogo.</p>
+        <a routerLink="/catalogo/aberturas" class="btn-back">Volver a Categorías Principales</a>
+    </div>
+}

@@ -1,0 +1,15 @@
+<header class="main-header" [ngClass]="{ 'active': isMenuOpen }" [class.floating]="isInicio">
+    <a routerLink="/" routerLinkActive="active-link"><img src="/logo.png" class="logo"></a>
+    <button class="hamburger" [ngClass]="{ 'active': isMenuOpen }" (click)="toggleMenu()" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
+        <ul class="nav-links">
+            <li><a routerLink="/la-empresa" routerLinkActive="active-link">La empresa</a></li>
+            <li><a routerLink="/catalogo" routerLinkActive="active-link">Catálogo</a></li>
+            <li><a routerLink="/contactanos" routerLinkActive="active-link" [ngClass]="{ 'contact-button': !isMenuOpen }">Contactanos</a></li>
+        </ul>
+    </nav>
+</header>

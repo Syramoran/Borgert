@@ -1,0 +1,47 @@
+<section class="catalogo-main-header">
+    <a routerLink="/catalogo"><h1>CATÁLOGO</h1></a>
+
+</section>
+
+<nav class="catalogo-nav-tabs">
+    
+    <a 
+        routerLink="aberturas" 
+        routerLinkActive="active"
+        class="nav-item"
+        [style.--url-fondo]="urlAberturas"
+        [style.--color]="colorAberturas"
+    >
+        ABERTURAS
+    </a>
+
+
+    <a 
+        routerLink="colores" 
+        routerLinkActive="active"
+        class="nav-item"
+        [style.--url-fondo]="urlColores"
+        [style.--color]="colorColores"
+    >
+        COLORES
+    </a>
+    
+    <a 
+        routerLink="decoral" 
+        routerLinkActive="active"
+        class="nav-item"
+        [style.--url-fondo]="urlDecoral"
+        [style.--color]="colorDecoral"
+    >
+        DECORAL
+    </a>
+    
+    
+
+</nav>
+
+<main class="catalogo-content">
+    <router-outlet></router-outlet>
+</main>
+
+<app-servicios-items></app-servicios-items>
