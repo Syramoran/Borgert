@@ -1,45 +1,72 @@
 <div class="contacto">
     <div class="fondo-rojo"></div>
-    <p>Contactanos</p> 
-    
+    <p>Contactanos</p>
+
     <div class="contenedor-contenido">
-        
+
         <div class="form-contact-container">
             <div class="title">
                 <h3>Envianos un mensaje</h3>
                 <p>Nos encantaría ayudarte con tu próximo proyecto.</p>
             </div>
-            <form>
-                <label>Nombre completo</label>
-                <input placeholder="Ingrese su nombre" />
-                
-                <label>Email</label>
-                <input placeholder="Ingrese su email" />
-                
-                <label>Teléfono</label>
-                <input placeholder="Ingrese su número" />
-                
-                <label>Mensaje</label>
-                <textarea rows="10" maxlength="500" placeholder="Me comunico por..." class="limited-input"></textarea>
-                
+            <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input id="name" type="text" formControlName="from_name" placeholder="Ingrese su nombre">
+                    <div
+                        *ngIf="contactForm.get('from_name')?.invalid && (contactForm.get('from_name')?.dirty)">
+                        <span class="alert">El nombre es requerido.</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" formControlName="from_email" placeholder="Ingrese su email">
+                    <div
+                        *ngIf="contactForm.get('from_email')?.invalid && (contactForm.get('from_email')?.dirty)">
+                        <span *ngIf="contactForm.get('from_email')?.errors?.['required']" class="alert" >El email es requerido.</span>
+                        <span *ngIf="contactForm.get('from_email')?.errors?.['email']" class="alert" >Por favor, ingrese un email
+                            válido.</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone">Número de teléfono:</label>
+                    <input type="tel" id="phone" formControlName="phone" name="phone" placeholder="Ingrese su número">
+                </div>
+                <div>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" formControlName="message" rows="10" maxlength="500"
+                        placeholder="Me comunico por..." class="limited-input"></textarea>
+                    <div
+                        *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty)">
+                        <span class="alert">El mensaje es requerido.</span>
+                    </div>
+                </div>
+
                 <div class="button-group">
                     <div class="social">
-                        <a href="https://www.facebook.com/share/16phA2xeNm/?mibextid=wwXIfr" target="_blank" aria-label="Facebook Borgert y Cía."><fa-icon [icon]="iconoFacebook" class="icono-social"></fa-icon></a>
-                        <a href="https://www.instagram.com/borgertycia?igsh=MWw4bm9rdmJoa2kyOQ==" target="_blank" aria-label="Instagram Borgert y Cía."><fa-icon [icon]="iconoInstagram" class="icono-social"></fa-icon></a>
+                        <a href="https://www.facebook.com/share/16phA2xeNm/?mibextid=wwXIfr" target="_blank"
+                            aria-label="Facebook Borgert y Cía."><fa-icon [icon]="iconoFacebook"
+                                class="icono-social"></fa-icon></a>
+                        <a href="https://www.instagram.com/borgertycia?igsh=MWw4bm9rdmJoa2kyOQ==" target="_blank"
+                            aria-label="Instagram Borgert y Cía."><fa-icon [icon]="iconoInstagram"
+                                class="icono-social"></fa-icon></a>
                     </div>
-                    <button class="send-btn">Enviar</button>
+                    <button class="send-btn" type="submit" [disabled]="!contactForm.valid">Enviar</button>
                 </div>
             </form>
         </div>
 
         <div class="location-container">
-            
+
             <div class="location">
                 <p>Casa central</p>
                 <div class="direcciones">
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoUbicacion" class="icono-grande sucursal"></fa-icon> 
+                        <fa-icon [icon]="iconoUbicacion" class="icono-grande sucursal"></fa-icon>
                         <div class="direccion-text">
                             <p class="direccion-title">Dirección</p>
                             <p class="direccion-texto">
@@ -47,9 +74,9 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoTelefono" class="icono-grande sucursal"></fa-icon> 
+                        <fa-icon [icon]="iconoTelefono" class="icono-grande sucursal"></fa-icon>
                         <div class="telefonos">
                             <div class="telefonos-text">
                                 <p class="direccion-title">WhatsApp</p>
@@ -62,9 +89,9 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoCorreo" class="icono-grande sucursal"></fa-icon> 
+                        <fa-icon [icon]="iconoCorreo" class="icono-grande sucursal"></fa-icon>
                         <div class="direccion-text">
                             <p class="direccion-title">Correo</p>
                             <p class="direccion-texto">
@@ -74,15 +101,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="line"></div>
-            
+
             <div class="location">
                 <p>Sucursal Paraná</p>
                 <div class="direcciones">
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoUbicacion" class="icono-grande"></fa-icon> 
+                        <fa-icon [icon]="iconoUbicacion" class="icono-grande"></fa-icon>
                         <div class="direccion-text">
                             <p class="direccion-title">Dirección</p>
                             <p class="direccion-texto">
@@ -90,9 +117,9 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoTelefono" class="icono-grande"></fa-icon> 
+                        <fa-icon [icon]="iconoTelefono" class="icono-grande"></fa-icon>
                         <div class="telefonos">
                             <div class="telefonos-text">
                                 <p class="direccion-title">WhatsApp</p>
@@ -105,9 +132,9 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="container">
-                        <fa-icon [icon]="iconoCorreo" class="icono-grande"></fa-icon> 
+                        <fa-icon [icon]="iconoCorreo" class="icono-grande"></fa-icon>
                         <div class="direccion-text">
                             <p class="direccion-title">Correo</p>
                             <p class="direccion-texto">
@@ -117,9 +144,9 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
-    
+
 </div>

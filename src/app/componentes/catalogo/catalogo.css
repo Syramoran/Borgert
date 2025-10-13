@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem 12vw;
+    padding: 2rem 10vw;
     border-bottom: 2px solid var(--gris-claro);
     background-color: var(--blanco-borgert);
     flex-wrap: wrap;
@@ -65,8 +65,8 @@
 
 /* Contenedor del contenido dinámico */
 .catalogo-content {
-    padding: 0 10vw;
-    max-width: 1200px;
+    padding: 2rem 10vw;
+    width: 100%;
     margin: 0 auto;
 }
 

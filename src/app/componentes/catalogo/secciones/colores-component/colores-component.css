@@ -13,9 +13,9 @@
 /* Contenedor principal para la estructura de dos columnas */
 .catalogo-container {
     display: flex;
-    max-width: 1200px;
+    width: 100%;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0;
     gap: 40px;
 }
 

@@ -14,7 +14,7 @@ export class AberturasComponent {
   aberturasCategories = ABERTURAS_CATEGORIES_DATA; 
   
   introText = {
-    title: 'Nuestras Categorías de Aberturas',
+    title: 'CATEGORÍAS',
     description: 'Explore la amplia variedad de diseños, estilos y líneas de Borgert y Cía.'
   };
 }
