@@ -11,8 +11,8 @@ import { ServiciosItems } from './servicios-items/servicios-items';
 })
 export class CatalogoComponent {
   urlColores: string = 'url(/aluminum-samples.jpeg)';
-  urlDecoral: string = 'url(/fondo-decorado.JPG)';
-  urlAberturas: string = 'url(/fondo-aberturas.JPG)';
+  urlDecoral: string = 'url(/fondo-decorado.jpg)';
+  urlAberturas: string = 'url(/fondo-aberturas.jpg)';
 
   colorColores: string = '#1B347D';
   colorAberturas: string = '#B62D25';

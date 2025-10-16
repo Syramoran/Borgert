@@ -1,5 +1,5 @@
 .banner-conocenos {
-  background-image: url('/conocenos.JPG');
+  background-image: url('/conocenos.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 }
 
 .banner-presente {
-  background-image: url('/presente.JPG');
+  background-image: url('/presente.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

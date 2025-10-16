@@ -1,5 +1,5 @@
 <header class="main-header" [ngClass]="{ 'active': isMenuOpen }" [class.floating]="isInicio">
-    <a routerLink="/" routerLinkActive="active-link"><img src="/logo.png" class="logo"></a>
+    <a routerLink="/" routerLinkActive="active-link"><img ngSrc="/logo.png" class="logo" width="100" height="100" ></a>
     <button class="hamburger" [ngClass]="{ 'active': isMenuOpen }" (click)="toggleMenu()" aria-label="Abrir menú">
         <span class="bar"></span>
         <span class="bar"></span>

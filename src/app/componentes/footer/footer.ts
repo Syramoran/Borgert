@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
@@ -7,7 +8,7 @@ import {
 
 @Component({
   selector: 'app-footer',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, NgOptimizedImage],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })

@@ -1,10 +1,11 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-galeria',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, NgOptimizedImage],
   templateUrl: './galeria.html',
   styleUrl: './galeria.css'
 })

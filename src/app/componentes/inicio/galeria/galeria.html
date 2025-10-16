@@ -6,13 +6,13 @@
     </div>
 
     <div class="gallery-grid">
-        <img src="/galeria1.jpeg" alt="Descripción de la imagen 1" (click)="openModal('/galeria1.jpeg')">
-            <img src="/galeria2.jpg" alt="Descripción de la imagen 2" (click)="openModal('/galeria2.jpg')">
-            <img src="/galeria3.jpeg" alt="Descripción de la imagen 3" (click)="openModal('/galeria3.jpeg')">
-            <img src="/galeria4.jpg" alt="Descripción de la imagen 4" (click)="openModal('/galeria4.jpg')">
-            <img src="/galeria5.jpg" alt="Descripción de la imagen 5" (click)="openModal('/galeria5.jpg')">
-            <img src="/galeria6.JPG" alt="Descripción de la imagen 6" (click)="openModal('/galeria6.JPG')">
-            <img src="/galeria7.jpg" alt="Descripción de la imagen 7" (click)="openModal('/galeria7.jpg')">
+        <img ngSrc="/galeria1.jpeg" width="400" height="200" alt="Descripción de la imagen 1" (click)="openModal('/galeria1.jpeg')">
+            <img ngSrc="/galeria2.jpg" width="400" height="200" alt="Descripción de la imagen 2" (click)="openModal('/galeria2.jpg')">
+            <img ngSrc="/galeria3.jpeg" width="400" height="200" alt="Descripción de la imagen 3" (click)="openModal('/galeria3.jpeg')">
+            <img ngSrc="/galeria4.jpg" width="400" height="200" alt="Descripción de la imagen 4" (click)="openModal('/galeria4.jpg')">
+            <img ngSrc="/galeria5.jpg" width="400" height="200" alt="Descripción de la imagen 5" (click)="openModal('/galeria5.jpg')">
+            <img ngSrc="/galeria6.jpg" width="400" height="200" alt="Descripción de la imagen 6" (click)="openModal('/galeria6.JPG')">
+            <img ngSrc="/galeria7.jpg" width="400" height="200" alt="Descripción de la imagen 7" (click)="openModal('/galeria7.jpg')">
         
     </div>
 
@@ -27,7 +27,7 @@
             aria-label="Cerrar imagen en detalle"
         ></fa-icon>
             
-            <img [src]="currentImageUrl" alt="Imagen en detalle" class="modal-image">
+            <img [ngSrc]="currentImageUrl" width="400" height="200" alt="Imagen en detalle" class="modal-image">
         </div>
     </div>
 </section>
