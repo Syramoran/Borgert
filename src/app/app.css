@@ -1,0 +1,66 @@
+#loader {
+  /* fixed inset-0 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* bg-white */
+  background-color: white;
+
+  /* z-50 */
+  z-index: 50;
+
+  /* flex items-center justify-center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition-opacity duration-500 */
+  transition-property: opacity;
+  transition-duration: 500ms;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.rounded-full {
+  border-radius: 9999px; /* Hace que el elemento sea un círculo */
+}
+
+.h-12 {
+  height: 3rem; /* 48px si 1rem = 16px */
+}
+
+.w-12 {
+  width: 3rem; /* 48px si 1rem = 16px */
+}
+
+.border-t-4 {
+  border-top-width: 4px;
+}
+
+.border-blue-500 {
+  border-color: #3b82f6; /* Color azul medio de la paleta de Tailwind */
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.opacity-0{
+  opacity: 0;
+  pointer-events: none; /* Evita interacciones cuando está oculto */
+}
+
+/* Definición de la animación de giro */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -13,4 +13,6 @@ import { Whatsapp } from './componentes/whatsapp/whatsapp';
 })
 export class App {
   protected readonly title = signal('borgert');
+
+
 }
