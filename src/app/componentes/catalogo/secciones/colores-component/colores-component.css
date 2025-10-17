@@ -14,7 +14,7 @@
 .catalogo-container {
     display: flex;
     width: 100%;
-    margin: 40px auto;
+    margin:0;
     padding: 0;
     gap: 40px;
 }
@@ -34,8 +34,8 @@
     align-items: center;
     padding: 15px 20px;
     
-    background-color: var(--gris-menu-inactivo);
-    color: var(--blanco-borgert);
+    background-color: white;
+    color: black;
     
     font-weight: 600;
     cursor: pointer;
@@ -45,8 +45,8 @@
 
 /* Estilo Activo */
 .menu-item.active {
-    background-color: var(--gris-menu-activo); 
-    color: var(--negro-borgert); 
+    background-color: #d0d0d0; 
+    color: black; 
 }
 
 .menu-item:hover {
@@ -69,8 +69,8 @@
 }
 
 .intro-text {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--gris-fondo-claro);
 }
 

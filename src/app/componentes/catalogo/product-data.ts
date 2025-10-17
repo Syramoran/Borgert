@@ -94,7 +94,7 @@ const PUERTAS_ITEMS: ProductItem[] = [
         name: 'Puerta Principal de Abrir 01', 
         imageUrl: 'https://placehold.co/200x150/660000/FFFFFF?text=P+Abrir+Herrero', 
         description: 'Diseño clásico, máxima seguridad y durabilidad.', 
-        linea: 'Línea Herrero renovada', 
+        linea: 'Línea Herrero', 
         subcategory: 'De abrir' 
     },
     // De Abrir (Línea Modena 45°)
@@ -102,7 +102,7 @@ const PUERTAS_ITEMS: ProductItem[] = [
         name: 'Puerta Balcón de Abrir Módena', 
         imageUrl: 'https://placehold.co/200x150/993333/FFFFFF?text=P+Abrir+Modena', 
         description: 'Elegancia y hermeticidad con perfiles de 45 grados.', 
-        linea: 'Línea Modena 45°', 
+        linea: 'Línea Módena', 
         subcategory: 'De abrir' 
     },
     // Corredizas (Línea A-30 New)
@@ -110,7 +110,7 @@ const PUERTAS_ITEMS: ProductItem[] = [
         name: 'Puerta Ventana Corrediza A-30', 
         imageUrl: 'https://placehold.co/200x150/cc6666/000000?text=P+Corr+A30', 
         description: 'Ideal para grandes vanos, alta prestación en hermeticidad.', 
-        linea: 'Línea A-30 New', 
+        linea: 'Línea A30 New', 
         subcategory: 'Corredizas' 
     },
     // Corredizas (Línea Rotonda)
@@ -134,7 +134,7 @@ const PUERTAS_ITEMS: ProductItem[] = [
         name: 'Puerta de Embutir Módena', 
         imageUrl: 'https://placehold.co/200x150/993333/FFFFFF?text=P+Embutir', 
         description: 'Diseño moderno que se oculta en la pared.', 
-        linea: 'Línea Modena 45°', 
+        linea: 'Línea Módena', 
         subcategory: 'Puerta de embutir' 
     },
 ];
@@ -179,7 +179,7 @@ export const CATEGORIES_MAP: { [key: string]: CategoryDetails } = {
         // Subcategorías extraídas de la imagen ae6dd3.jpg
         subcategories: ['De abrir', 'Corredizas', 'Corredizas con riel', 'Plegadizas colgantes', 'Puerta placa', 'Puerta de embutir', 'Puerta acordeón'],
         introText: {
-            title: 'Puertas de Aluminio Borgert',
+            title: 'Puertas de aluminio',
             description: 'Amplia variedad de diseños y líneas, pensadas para la seguridad y la estética de su hogar. Explore las subcategorías y aplique filtros por línea para encontrar su producto.'
         },
         productItems: PUERTAS_ITEMS 

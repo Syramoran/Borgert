@@ -9,6 +9,21 @@
         <div class="abertura-layout">
 
             @if (subcategories.length > 0) {
+
+                <div class="sub-menu-mobile-select ">
+                    <label for="mobile-sub-filter"> Tipo de {{ categoriaId | lowercase }}: </label>
+                    <select 
+                        id="mobile-sub-filter"
+                        [ngModel]="currentSubcategory" 
+                        (ngModelChange)="selectSubcategory($event)"
+                    >
+                        <option value="" selected>Todas las subcategorías</option>
+                        @for (sub of subcategories; track sub) {
+                            <option [value]="sub">{{ sub }}</option>
+                        }
+                    </select>
+                </div>
+
                 <div class="sub-menu-lateral">
                     <h3 class="menu-title">Tipos de {{ categoriaId | titlecase }}</h3>
                     @for (sub of subcategories; track sub) {
@@ -21,12 +36,13 @@
                         </div>
                     }
                 </div>
+
             }
 
             <div class="main-content">
                 
                 <div class="filter-bar">
-                    <label for="linea-filter">Filtrar por Línea de Aluminio:</label>
+                    <label for="linea-filter">Filtrar por línea:</label>
                     <select 
                         id="linea-filter"
                         [ngModel]="currentFilterLine" 
