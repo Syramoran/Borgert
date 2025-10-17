@@ -14,7 +14,7 @@ export class Preguntas {
   faqItems = [
     {
       question: '¿Qué tipos de acabados ofrecen para las aberturas de aluminio?',
-      answer: 'Ofrecemos una amplia variedad de diseños, estilos, líneas y acabados. Esto incluye esmaltados con pintura en polvo y decorado efecto madera. Además, ofrecemos el acabado ANODIZADO, un proceso electrolítico que protege al perfil de aluminio de la corrosión.'
+      answer: 'Ofrecemos diferentes tipos de acabados: esmaltado en polvo (Borgert Color), decorado efecto madera (Borgert Decoral) y anodizado en distintas tonalidades, texturas y protección según la necesidad del proyecto.'
     },
     {
       question: '¿Realizan envíos a todo el país?',
