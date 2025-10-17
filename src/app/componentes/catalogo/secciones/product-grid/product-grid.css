@@ -10,7 +10,7 @@
        Se ajustan automáticamente, mínimo 200px por columna */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .product-item {

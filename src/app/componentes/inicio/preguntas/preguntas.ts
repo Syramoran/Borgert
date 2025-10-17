@@ -14,7 +14,7 @@ export class Preguntas {
   faqItems = [
     {
       question: '¿Qué tipos de acabados ofrecen para las aberturas de aluminio?',
-      answer: 'Ofrecemos una amplia gama de acabados, incluyendo anodizado, lacado y una variedad de colores RAL para satisfacer cualquier necesidad de diseño y durabilidad.'
+      answer: 'Ofrecemos una amplia variedad de diseños, estilos, líneas y acabados. Esto incluye esmaltados con pintura en polvo y decorado efecto madera. Además, ofrecemos el acabado ANODIZADO, un proceso electrolítico que protege al perfil de aluminio de la corrosión.'
     },
     {
       question: '¿Realizan envíos a todo el país?',
@@ -22,11 +22,11 @@ export class Preguntas {
     },
     {
       question: '¿Ofrecen servicio de colocación?',
-      answer: 'No, por el momento no ofrecemos servicio de colocación. Sin embargo, podemos recomendarle instaladores certificados en su zona para garantizar una instalación profesional.'
+      answer: 'Sí, ofrecemos el servicio de colocación de aberturas de aluminio. Adicionalmente, brindamos asesoramiento técnico y relevamiento en obras, terminaciones adicionales, adaptación de aberturas a medida, reparación y mantenimiento.'
     },
     {
       question: '¿Dónde puedo ver sus productos?',
-      answer: 'Puede visitar nuestro showroom principal ubicado en [Dirección de la tienda] o explorar nuestro catálogo completo en línea.'
+      answer: 'Puede visitar nuestro salón de exposición y ventas ubicado en nuestra sucursal de Paraná, en Av. Churruarín 55, o explorar nuestro catálogo completo en línea.'
     }
   ];
 
